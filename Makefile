@@ -6,17 +6,18 @@
 #    By: ilevy <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/26 13:48:13 by ilevy             #+#    #+#              #
-#    Updated: 2024/11/26 14:10:11 by ilevy            ###   ########.fr        #
+#    Updated: 2024/11/30 22:00:13 by ilevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror -I
-INCLUDE := h_files/
+H_FILES:= h_files/
 SRC_DIR := c_files/
 OBJ_DIR := o_files/
-PRINTFLIBFT := 42_printf/
+LIBFT:= libft/
+INC_DIR:= $(addprefix $(LIBFT), $(H_FILES));
 
 #Source_files in c_files.
 
@@ -35,8 +36,8 @@ objdir_mk:
 	@mkdir -p $(OBJ_DIR)
 
 $(NAME):	$(OBJ)
-	@make -C $(PRINTFLIBFT)
-	@cp $(PRINTFLIBFT)/printflibft.a
+	@make -C $(LIBFT)
+	@cp $(LIBFT)/libft.a
 	@$(CC) $(CFLAGS) $(INCLUDE) $< -o $@
 	@echo "Compiling the push_swap program!"
 
