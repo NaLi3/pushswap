@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_iswhitespace.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 11:30:30 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/01 03:14:25 by ilevy            ###   ########.fr       */
+/*   Created: 2024/12/01 03:59:00 by ilevy             #+#    #+#             */
+/*   Updated: 2024/12/01 03:59:02 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../h_files/libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_iswhitespace(int c)
 {
-	t_list	*new;
-
-	new = (t_list *)malloc(1 * sizeof(t_list));
-	if (!new)
+	if (c == ' ')
 		return (0);
-	new -> content = content;
-	new -> next = NULL;
-	return (new);
+	return (1);
 }

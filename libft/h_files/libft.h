@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 03:46:33 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/30 21:49:18 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/01 04:02:24 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include "ft_printf.h"
 # include "ft_get_next_line.h"
+# include "ft_push_swap.h"
 
 typedef struct s_list
 {
@@ -36,6 +37,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_free(char **tab);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *b, int c, size_t n);
@@ -49,6 +51,7 @@ int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
+int		ft_iswhitespace(int c);
 int		ft_atoi(const char *nptr);
 int		ft_isprint(int c);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);

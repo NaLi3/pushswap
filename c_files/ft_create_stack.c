@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_create_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 11:30:30 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/01 03:14:25 by ilevy            ###   ########.fr       */
+/*   Created: 2024/12/01 03:55:48 by ilevy             #+#    #+#             */
+/*   Updated: 2024/12/01 04:05:14 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../h_files/libft.h"
+#include "../libft/h_files/libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_create_stack(char *str)
 {
-	t_list	*new;
+	int		i;
+	char	**tab;
+	t_list	*stack;
 
-	new = (t_list *)malloc(1 * sizeof(t_list));
-	if (!new)
-		return (0);
-	new -> content = content;
-	new -> next = NULL;
-	return (new);
+	i = 0;
+	tab = ft_split(str, ' ');
+	while (tab[i++])
+		ft_lstadd_back(&stack, ft_lstnew(tab[i]));
+	ft_free(tab);
+	return (stack);
 }

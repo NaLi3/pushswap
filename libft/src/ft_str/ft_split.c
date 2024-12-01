@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 22:03:53 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/14 01:01:04 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/01 03:05:25 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	memory_alloc(char **tab, const char *s, char c)
 		{
 			tab[i] = (char *)malloc(sizeof(char) * (count + 1));
 			if (!tab[i])
-				return ;
+				return (ft_free(tab));
 			fill_tab(tab[i++], (s + index), c);
 			index += count;
 		}
@@ -66,6 +66,19 @@ static void	memory_alloc(char **tab, const char *s, char c)
 			index++;
 	}
 	tab[i] = 0;
+}
+
+static void	ft_free(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i])
+		i++;
+	}
+	free(tab);
 }
 
 char	**ft_split(char const *s, char c)

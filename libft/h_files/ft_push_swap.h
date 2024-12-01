@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:45:31 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/30 19:39:07 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/01 04:24:49 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@
 # include <stdlib.h>
 # include "ft_printf.h"
 
-typedef	struct	s_list
-{
-	int	value;
-	struct s_list	*next;
-}		t_list;
+//ft_free.c
+void	ft_free(char **tab);
 
+//ft_create_stack.c
+t_list	*ft_create_stack(char *str);
 
+// ft_checking.c
+int		ft_error_checking(int argc, char *str);
+int		ft_check_stack_bigger(t_list *stack, int num);
+
+#endif

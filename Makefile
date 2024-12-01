@@ -6,7 +6,7 @@
 #    By: ilevy <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/26 13:48:13 by ilevy             #+#    #+#              #
-#    Updated: 2024/11/30 22:00:13 by ilevy            ###   ########.fr        #
+#    Updated: 2024/12/01 02:28:27 by ilevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ $(NAME):	$(OBJ)
 	@make -C $(LIBFT)
 	@cp $(LIBFT)/libft.a
 	@$(CC) $(CFLAGS) $(INCLUDE) $< -o $@
-	@echo "Compiling the push_swap program!"
+	@echo "Compiling the Push_Swap program!"
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c | objdir_mk
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
@@ -47,12 +47,12 @@ $(OBJ_DIR)%.o:	$(SRC_DIR)%.c | objdir_mk
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@make clean -C $(PRINTFLIBFT)
-	@echo "push_swap.o and Printflibft.a files have been cleaned!"
+	@make clean -C $(LIBFT)
+	@echo "push_swap.o and libft.a files have been cleaned!"
 
 fclean:	clean
 	@rm -rf $(NAME)
-	@echo "Push_Swap has been cleaned!"
+	@echo "Push_Swap program has been cleaned!"
 
 re:	fclean all
 	@echo "Let's try one more time!"

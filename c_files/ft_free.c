@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 11:30:30 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/01 03:14:25 by ilevy            ###   ########.fr       */
+/*   Created: 2024/12/01 03:15:58 by ilevy             #+#    #+#             */
+/*   Updated: 2024/12/01 03:51:14 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../h_files/libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_free(char **tab)
 {
-	t_list	*new;
+	int	i;
 
-	new = (t_list *)malloc(1 * sizeof(t_list));
-	if (!new)
-		return (0);
-	new -> content = content;
-	new -> next = NULL;
-	return (new);
+	i = 0;
+	while (tab[i])
+		free(tab[i++]);
+	free(tab);
 }

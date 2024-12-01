@@ -1,25 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_checking.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 11:30:30 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/01 03:14:25 by ilevy            ###   ########.fr       */
+/*   Created: 2024/12/01 02:54:18 by ilevy             #+#    #+#             */
+/*   Updated: 2024/12/01 03:39:30 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../h_files/libft.h"
+#include "../libft/h_files/libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_error_checking(int argc, char *str)
 {
-	t_list	*new;
+	int	i;
 
-	new = (t_list *)malloc(1 * sizeof(t_list));
-	if (!new)
+	i = 0;
+	if (argc != 2)
+	{
+		return (1);
+	}
+	while (ft_isnum(str[i]) || ft_iswhitespace(str[i]))
+		i++;
+	if (!str[i])
+	{
 		return (0);
-	new -> content = content;
-	new -> next = NULL;
-	return (new);
+	}
+	else
+	{
+		return (2);
+	}
+}
+
+int	ft_check_stack_bigger(t_list *stack, int num)
+{
+	if (ft_lstsize(stack) <= num)
+	{
+		return (0);
+	}
+	else
+	{
+		return (1);
+	}
 }
