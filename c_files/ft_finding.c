@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:06:51 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/02 13:46:35 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/02 21:53:56 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,34 @@
 
 int	ft_find_max_stack(t_stack *stack)
 {
-	int	i;
-	int	max;
+	t_stack	*current;
+	int		max;
 
-	i = 0;
-	max = INT_MIN;
-	while (stack[i])
+	if (!stack)
+		return (0);
+	max = stack -> value;
+	current = stack;
+	while (current)
 	{
-		if ((stack[i] -> value) > max)
-			max = (stack[i] -> value);
-		i++;
+		if (current -> value > max)
+			max = current -> value;
+		current = current -> next;
 	}
 	return (max);
 }
 
 int	ft_find_min_stack(t_stack *stack)
 {
-	int	i;
-	int	min;
+	t_stack	*current;
+	int		min;
 
-	i = 0;
-	min = INT_MAX;
-	while (stack[i])
+	min = stack -> value;
+	current = stack;
+	while (current)
 	{
-		if ((stack[i] -> value) < min)
-			min = (stack[i] -> value);
-		i++;
+		if (current -> value < min)
+			min = (current -> value);
+		current = current -> next;
 	}
 	return (min);
 }

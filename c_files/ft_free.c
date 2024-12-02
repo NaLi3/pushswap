@@ -6,11 +6,11 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 03:15:58 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/02 13:14:31 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/02 22:39:44 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../h_files/libft.h"
+#include "../libft/h_files/libft.h"
 
 void	ft_free_tab(char **tab)
 {
@@ -20,4 +20,16 @@ void	ft_free_tab(char **tab)
 	while (tab[i])
 		free(tab[i++]);
 	free(tab);
+}
+
+void	ft_free_stack(t_stack **stack)
+{
+	t_stack *temp;
+
+	while ((*stack))
+	{
+		temp = *stack;
+		*stack = (*stack) -> next;
+		free(temp);
+	}
 }
