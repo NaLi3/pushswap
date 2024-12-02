@@ -6,13 +6,13 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 03:15:58 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/01 03:51:14 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/02 13:14:31 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../h_files/libft.h"
 
-void	ft_free(char **tab)
+void	ft_free_tab(char **tab)
 {
 	int	i;
 

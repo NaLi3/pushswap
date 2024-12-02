@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_organize.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 11:49:02 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/02 13:30:03 by ilevy            ###   ########.fr       */
+/*   Created: 2024/12/02 13:15:43 by ilevy             #+#    #+#             */
+/*   Updated: 2024/12/02 13:45:52 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../h_files/libft.h"
+#include "../libft/h_files/libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_organize_three(t_stack *stack)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	int	i;
+	int	max;
+	int	min;
+
+	i = 0;
+	max = ft_find_max_stack(&stack);
+	min = ft_find_min_stack(&stack);
+
 }
+ //Possible to only use one function by returning both max and min with an int tab;
+
+
+

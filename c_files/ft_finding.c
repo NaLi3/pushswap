@@ -1,49 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checking.c                                :+:      :+:    :+:   */
+/*   ft_finding.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 02:54:18 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/01 03:39:30 by ilevy            ###   ########.fr       */
+/*   Created: 2024/12/02 13:06:51 by ilevy             #+#    #+#             */
+/*   Updated: 2024/12/02 13:46:35 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/h_files/libft.h"
 
-// Error checking checks that an argument is given.
-// It checks that the argument is comprised of nums and spaces.
-
-int	ft_error_checking(int argc, char *str)
+int	ft_find_max_stack(t_stack *stack)
 {
 	int	i;
+	int	max;
 
 	i = 0;
-	if (argc < 2)
+	max = INT_MIN;
+	while (stack[i])
 	{
-		return (1);
-	}
-	while (ft_isnum(str[i]) || ft_iswhitespace(str[i]))
+		if ((stack[i] -> value) > max)
+			max = (stack[i] -> value);
 		i++;
-	if (!str[i])
-	{
-		return (0);
 	}
-	else
-	{
-		return (2);
-	}
+	return (max);
 }
 
-int	ft_check_stack_bigger(t_stack *stack, int num)
+int	ft_find_min_stack(t_stack *stack)
 {
-	if (ft_lstsize(stack) <= num)
+	int	i;
+	int	min;
+
+	i = 0;
+	min = INT_MAX;
+	while (stack[i])
 	{
-		return (0);
+		if ((stack[i] -> value) < min)
+			min = (stack[i] -> value);
+		i++;
 	}
-	else
-	{
-		return (1);
-	}
+	return (min);
 }

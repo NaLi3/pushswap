@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 03:46:33 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/01 04:02:24 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/02 13:36:17 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 # include "ft_printf.h"
 # include "ft_get_next_line.h"
 # include "ft_push_swap.h"
+
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
+
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
 
 typedef struct s_list
 {

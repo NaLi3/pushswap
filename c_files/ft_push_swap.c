@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 02:24:13 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/01 04:27:34 by ilevy            ###   ########.fr       */
+/*   Created: 2024/12/02 13:01:00 by ilevy             #+#    #+#             */
+/*   Updated: 2024/12/02 13:21:27 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,23 @@
 
 t_list	*ft_push_swap(int argc, char **argv)
 {
-	t_list	*stack_A;
+	t_stack	*stack_A;
 
 	if (ft_error_checking(argc, str))
 		return (NULL);
-	stack_A = ft_create_stack(argv[1]);
+	if (argc == 2)
+	{
+		stack_A = ft_create_stack(argv[1]);
 	if (!ft_check_stack_bigger(stack_A, 3))
-		(ft_organize(stack_A));
+		(ft_organize_3(stack_A));
 	else
 	{
-		
+
 	}
 	return (stack_A);
+	}
+	// TBD: Make it work when there are multiple arguments with strjoin.
+
 }
 // 3...) Iterate through stack A to find "least amount" of operations (it will be max or min)
 // 4) Organize stack A.
