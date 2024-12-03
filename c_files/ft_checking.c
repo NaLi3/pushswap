@@ -20,7 +20,7 @@ int	ft_error_checking(int argc, char *str)
 	int	i;
 
 	i = 0;
-	if (argc < 2)
+	if (argc < 2) //To be modified
 	{
 		return (1);
 	}

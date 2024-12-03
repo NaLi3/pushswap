@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilevy <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 12:26:21 by ilevy             #+#    #+#             */
-/*   Updated: 2024/11/08 12:50:28 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/02 18:23:03 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,3 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-/*
-int	main(int argc, char **argv)
-{
-	t_list	*lst;
-	t_list	*new;
-
-	new = (t_list *)malloc(sizeof(t_list));
-	lst = (t_list *)malloc(sizeof(t_list));
-	new->content = argv[1];
-	lst->content = argv[2];
-	new->next = NULL;
-	lst->next = NULL;
-	ft_lstadd_front(&lst, new);
-	printf("%s\n%s\n", lst->content, ft_lstlast(lst)->content);
-	return (0);
-}
-*/
