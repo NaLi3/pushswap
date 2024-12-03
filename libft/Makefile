@@ -21,7 +21,7 @@ OBJ_DIR:= obj/
 #Source_dirs and their contents
 
 FTIS_DIR:= ft_is/
-FTIS = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isprint.c ft_isdigit.c 
+FTIS = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isprint.c ft_isdigit.c
 
 FTTO_DIR:= ft_to/
 FTTO:= ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c
@@ -46,7 +46,7 @@ FTPRINTF_DIR:= ft_printf/
 FTPRINTF:= ft_printbasic.c ft_printf.c ft_printhexa.c ft_printpointer.c ft_printunsigned.c
 
 FTGETNEXT_DIR:= ft_getnext/
-FTGETNEXT:= ft_get_next_line.c ft_get_next_line_utils.c  
+FTGETNEXT:= ft_get_next_line.c ft_get_next_line_utils.c
 
 # Source_files relative to src/
 
@@ -87,6 +87,8 @@ objdir_mk:
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c | objdir_mk
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
+just:	$(NAME) | clean
+
 clean:
 	rm -rf $(OBJ_DIR)
 	@echo ".o files have been removed!"
@@ -98,4 +100,4 @@ fclean:	clean
 re:	fclean all
 	@echo "Let's start over fresh!"
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re just

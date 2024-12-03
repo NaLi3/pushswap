@@ -6,13 +6,13 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:15:43 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/03 10:43:16 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/03 12:12:53 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/h_files/libft.h"
 
-void	ft_organize(t_stack **stack, int max, int min)
+void	ft_organize_three(t_stack **stack, int max, int min)
 {
 	if (!stack || (!*stack) || !(*stack)->next || !(*stack)->next->next)
 		return ;
