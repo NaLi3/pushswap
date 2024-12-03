@@ -20,20 +20,14 @@ int	ft_error_checking(int argc, char *str)
 	int	i;
 
 	i = 0;
-	if (argc < 2) //To be modified
-	{
+	if (argc != 2 || !argv[1][0])
 		return (1);
-	}
 	while (ft_isnum(str[i]) || ft_iswhitespace(str[i]))
 		i++;
 	if (!str[i])
-	{
 		return (0);
-	}
 	else
-	{
 		return (2);
-	}
 }
 
 int	ft_check_stack_bigger(t_stack *stack, int num)

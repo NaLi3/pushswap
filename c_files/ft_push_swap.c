@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:01:00 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/03 12:09:08 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/03 14:41:34 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ t_list	*ft_push_swap(int argc, char **argv)
 
 	if (ft_error_checking(argc, str))
 		return (NULL);
-	if (argc == 2)
-		stack_a = ft_create_stack(argv[1]);
-	stack_b = ft_create_stack(NULL);
+	stack_a = ft_create_stack(argv[1]);
+	stack_b = NULL;
 	if (!ft_check_stack_bigger(stack_a, 3))
 		ft_organize(&stack_a, ft_max_stack(stack_a), ft_min_stack(stack_a));
 	else

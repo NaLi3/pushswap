@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:45:31 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/03 10:49:26 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/03 14:54:44 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,12 @@ t_stack	*ft_stacklast(t_stack *stack);
 void	ft_stackadd_back(t_stack **stack, t_stack *new);
 
 //ft_organize.c
-void	ft_organize_three(t_stack **stack);
+void	ft_organize_three(t_stack **stack, int max, int min);
+void	ft_organize_two(t_stack **stack);
 
 //ft_finding.c
-int		ft_find_min_stack(t_stack *stack);
-int		ft_find_max_stack(t_stack *stack);
+int		ft_min_stack(t_stack *stack);
+int		ft_max_stack(t_stack *stack);
 int		ft_stacksize(t_stack *stack);
 
 // ft_checking.c
