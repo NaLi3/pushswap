@@ -6,7 +6,7 @@
 /*   By: ilevy <ilevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:45:31 by ilevy             #+#    #+#             */
-/*   Updated: 2024/12/02 21:11:31 by ilevy            ###   ########.fr       */
+/*   Updated: 2024/12/03 10:49:26 by ilevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,19 @@ void	ft_free_tab(char **tab);
 void	ft_free_stack(t_stack **stack);
 
 //ft_stack_mngmemt.c
-void	ft_stackadd_front(t_stack **stack, t_stack *new);
-void	ft_stackadd_back(t_stack **stack, t_stack *new);
-t_stack	*ft_stacklast(t_stack *stack);
-
+void	ft_swap(t_stack **stack);
+void	ft_rotate(t_stack **stack);
+void	ft_reverse_rotate(t_stack **stack);
+void	ft_push(t_stack **src, t_stack **dest);
 
 //ft_create_stack.c
-t_stack *ft_create_stack(char *str);
+t_stack	*ft_create_stack(char *str);
 t_stack	*ft_stacknew(int content);
+t_stack	*ft_stacklast(t_stack *stack);
+void	ft_stackadd_back(t_stack **stack, t_stack *new);
+
+//ft_organize.c
+void	ft_organize_three(t_stack **stack);
 
 //ft_finding.c
 int		ft_find_min_stack(t_stack *stack);
